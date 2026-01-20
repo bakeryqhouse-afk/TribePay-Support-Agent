@@ -7,9 +7,12 @@ export function ChatKitPanel() {
     () => createClientSecretFetcher(workflowId),
     []
   );
-
   const chatkit = useChatKit({
     api: { getClientSecret },
+    config: {
+      welcomeMessage: "TribePay Customer Assistant",
+      inputPlaceholder: "How can I help you today?",
+    },
   });
 
   return (
